@@ -2,7 +2,7 @@
 <resources>
     <!-- application -->
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#2b2248</color>
     <color name="colorAccent">#448AFF</color>
     <color name="colorTextIcons">#FFFFFF</color>
     <color name="colorLightPrimary">#C5CAE9</color>

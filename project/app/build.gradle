@@ -75,6 +75,7 @@ dependencies {
     implementation dependencies.rxJava
     implementation dependencies.rxKotlin
     implementation dependencies.rxAndroid
+    implementation dependencies.rxBinding
 
     /* dagger */
     kaptTest dependencies.daggerCompiler
@@ -95,6 +96,9 @@ dependencies {
     implementation dependencies.squareLogging
     implementation dependencies.squareOkHttp
     implementation dependencies.squareRxAdapter
+
+    /* views */
+    implementation dependencies.viewTextDrawable
 
     /* tests */
     testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"

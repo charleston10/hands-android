@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="charleston.androidkotlinproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App"
@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme"
         tools:replace="label">
 
-        <activity android:name=".features.proprierties.apresentations.PropriertActivity">
+        <activity
+            android:name=".features.info.apresentations.InfoActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -34,4 +34,23 @@ data class Info(
         var city: String,
         var state: String,
         var country: String
-)
+) {
+    fun apps(): String {
+        val stringBuilder = StringBuilder()
+
+        if (istInstalledApps.isNotEmpty()) {
+
+            var count = 0
+            for (app: String in istInstalledApps) {
+                stringBuilder.append(app)
+
+                count++
+                if (count < istInstalledApps.size) stringBuilder.append(", ")
+            }
+        } else {
+            stringBuilder.append("Não há aplicativos instalados")
+        }
+
+        return stringBuilder.toString()
+    }
+}

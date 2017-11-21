@@ -2,6 +2,7 @@ package charleston.androidkotlinproject
 
 import charleston.androidkotlinproject.data.domain.Info
 import charleston.androidkotlinproject.data.remote.features.info.InfoManager
+import charleston.androidkotlinproject.di.DaggerTestComponent
 import io.reactivex.observers.TestObserver
 import io.reactivex.subscribers.TestSubscriber
 import org.junit.Before

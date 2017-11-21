@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 class InfoManager(val retrofit: Retrofit) {
 
-    fun findAll(): Observable<List<Info>> {
+    fun findAll(): Observable<ArrayList<Info>> {
         return retrofit.create(InfoWorker::class.java).findAll()
     }
 

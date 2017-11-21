@@ -9,6 +9,7 @@ ext {
     rxKotlin = '0.55.0'
     rxAndroid = '2.0.1'
     rxAppState = '2.0.0'
+    rxBinding = '0.3.0'
     jUnit = '4.12'
     mockitoKotlin = '0.7.0'
     multiDex = '1.0.1'
@@ -22,6 +23,7 @@ ext {
     robolectric = '3.4.2'
     robolectricAnnotations = '3.0'
     robolectricSupport = '3.0'
+    textDrawable = '1.0.1'
 
     dependencies = [
             androidKotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin",
@@ -48,6 +50,7 @@ ext {
             rxJava                    : "io.reactivex.rxjava2:rxjava:$rxJava",
             rxKotlin                  : "io.reactivex:rxkotlin:$rxKotlin",
             rxAndroid                 : "io.reactivex.rxjava2:rxandroid:$rxAndroid",
+            rxBinding                 : "com.jakewharton.rxbinding:rxbinding:$rxBinding",
 
             googleGson                : "com.google.code.gson:gson:$gson",
             squareOkHttp              : "com.squareup.okhttp3:okhttp:$okHttp3",
@@ -66,6 +69,8 @@ ext {
             daggerAndroidProcessor    : "com.google.dagger:dagger-android-processor:$dagger",
 
             lifecycle                 : "android.arch.lifecycle:extensions:$androidArchitecture",
-            lifecycleCompiler         : "android.arch.lifecycle:compiler:$androidArchitecture"
+            lifecycleCompiler         : "android.arch.lifecycle:compiler:$androidArchitecture",
+
+            viewTextDrawable : "com.amulyakhare:com.amulyakhare.textdrawable:$textDrawable"
     ]
 }

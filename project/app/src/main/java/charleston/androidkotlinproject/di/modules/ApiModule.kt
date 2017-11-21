@@ -1,6 +1,5 @@
 package charleston.androidkotlinproject.di.modules
 
-import charleston.androidkotlinproject.data.remote.configurations.DateAdapter
 import charleston.androidkotlinproject.data.remote.features.info.InfoManager
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -10,7 +9,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -42,7 +40,7 @@ class ApiModule {
     @Singleton
     fun provideRetrofit(gsonFactory: Gson, httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-                .baseUrl("http://localhost:3000/v1/")
+                .baseUrl("http://10.10.100.152:3000/v1/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gsonFactory))
                 .client(httpClient)

@@ -1,16 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:padding="8dp">
+    tools:context=".features.info.apresentations.InfoActivity">
 
-    <TextView
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        android:visibility="gone">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapse_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title=" ">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner_background"
+                android:contentInsetEnd="0dp"
+                android:contentInsetLeft="0dp"
+                android:contentInsetRight="0dp"
+                android:contentInsetStart="0dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <EditText
+                    android:id="@+id/main_txt_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:hint="Pesquisar..." />
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/main_pb_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Job Listing"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
-</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>

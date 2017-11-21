@@ -11,7 +11,7 @@ import retrofit2.http.Path
 interface InfoWorker {
 
     @GET(InfoEndPoint.FIND_ALL)
-    fun findAll(): Observable<List<Info>>
+    fun findAll(): Observable<ArrayList<Info>>
 
     @GET(InfoEndPoint.FIND_BY_ID)
     fun findAById(@Path("id") id: String): Observable<Info>
