@@ -2,4 +2,9 @@
     <string name="app_name">AndroidKotlinProject</string>
 
     <string name="message_campo_obrigatorio">Mandatory field</string>
+
+    <string-array name="info_sort">
+        <item>SO Version</item>
+        <item>Address</item>
+    </string-array>
 </resources>

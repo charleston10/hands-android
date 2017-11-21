@@ -1,17 +1,33 @@
 package charleston.androidkotlinproject.features.info.presenters
 
+import android.annotation.SuppressLint
+import android.support.annotation.IntDef
 import charleston.androidkotlinproject.data.domain.Info
 import charleston.androidkotlinproject.data.remote.features.info.InfoManager
 import charleston.androidkotlinproject.di.AppInjector
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
+import java.util.*
 import javax.inject.Inject
 
 /**
  * Created by charleston on 20/11/17.
  */
 class InfoPresenter(private val view: InfoView) {
+
+    companion object {
+        const val SORT_SO_ASC = 0
+        const val SORT_SO_DESC = 1
+    }
+
+    /**
+     * Create annotation for sort type
+     */
+    @IntDef(SORT_SO_ASC.toLong(), SORT_SO_DESC.toLong())
+    @Retention(RetentionPolicy.SOURCE)
+    annotation class SortType
 
     @Inject
     lateinit var manager: InfoManager
@@ -39,6 +55,10 @@ class InfoPresenter(private val view: InfoView) {
                 })
     }
 
+    fun showAll() {
+        view.showList(list)
+    }
+
     fun filter(value: String) {
         val listFiltered: ArrayList<Info> = arrayListOf()
 
@@ -62,15 +82,32 @@ class InfoPresenter(private val view: InfoView) {
         view.showList(listFiltered)
     }
 
+    @SuppressLint("SwitchIntDef")
+    fun sort(@SortType sortType: Int) {
+        when (sortType) {
+            SORT_SO_ASC -> Collections.sort(list, { o1, o2 ->
+                if (o1?.osVersion != null && o2?.osVersion != null) {
+                    o2.osVersion.toUpperCase().compareTo(o1.osVersion.toUpperCase())
+                } else {
+                    0
+                }
+            })
+            SORT_SO_DESC -> Collections.sort(list, { o1, o2 ->
+                if (o1?.osVersion != null && o2?.osVersion != null) {
+                    o1.osVersion.toUpperCase().compareTo(o2.osVersion.toUpperCase())
+                } else {
+                    0
+                }
+            })
+        }
+        view.showList(list)
+    }
+
     private fun filterApps(info: Info, value: String): Boolean {
         info.istInstalledApps
                 .filter { it.toUpperCase().contains(value.toUpperCase()) }
                 .forEach { return true }
 
         return false
-    }
-
-    fun showAll() {
-        view.showList(list)
     }
 }

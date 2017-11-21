@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_pop_up_info_sort_so_asc"
+        android:title="Sistema Operacional (asc)" />
+
+    <item
+        android:id="@+id/menu_pop_up_info_sort_so_desc"
+        android:title="Sistema Operacional (desc)" />
+</menu>
