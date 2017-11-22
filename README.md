@@ -1,4 +1,10 @@
-# hands-android
+# Hands Android
+
+O projeto tem como objetivo listar todos aparelhos cadastrados no sistema e quais aplicativos têm instalado
+
+## Demostração
+
+https://www.youtube.com/watch?v=e0_bq2iBpcQ
 
 ## Utilização
 
@@ -17,5 +23,3 @@ Lifecycle Android - https://developer.android.com/guide/components/activities/ac
 ## Frameworks
 
 Retrofit2 - http://square.github.io/retrofit/
-
-Glide - https://github.com/bumptech/glide
