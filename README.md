@@ -2,6 +2,15 @@
 
 O projeto tem como objetivo listar todos aparelhos cadastrados no sistema e quais aplicativos têm instalado
 
+<table>
+  <td>
+       <img width="200" src="https://github.com/charleston10/hands-android/blob/master/screenshots/screen1.png">
+  </td>
+   <td>
+        <img width="200" src="https://github.com/charleston10/hands-android/blob/master/screenshots/screen2.png">
+   </td>
+</table>
+
 ## Demostração
 
 https://www.youtube.com/watch?v=e0_bq2iBpcQ
