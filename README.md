@@ -14,6 +14,14 @@ O projeto tem como objetivo listar todos aparelhos cadastrados no sistema e quai
    </td>
 </table>
 
+## API
+
+`REMOTE`
+http://charleston.us-2.evennode.com/v1/
+
+`LOCAL`
+Instalar esse projeto https://github.com/charleston10/hands-nodejs
+
 ## Demostração
 
 https://www.youtube.com/watch?v=e0_bq2iBpcQ
