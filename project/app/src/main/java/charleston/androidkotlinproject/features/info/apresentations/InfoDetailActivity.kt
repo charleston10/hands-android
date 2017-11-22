@@ -2,35 +2,21 @@ package charleston.androidkotlinproject.features.info.apresentations
 
 import android.content.Context
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
-import android.widget.EditText
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import charleston.androidkotlinproject.R
 import charleston.androidkotlinproject.data.domain.Info
-import charleston.androidkotlinproject.extensions.create
 import charleston.androidkotlinproject.extensions.isVisible
-import charleston.androidkotlinproject.features.info.adapters.InfoAdapter
 import charleston.androidkotlinproject.features.info.adapters.InfoAppAdapter
+import kotlinx.android.synthetic.main.activity_info_detail.*
 
 /**
  * Created by charleston on 21/11/17.
  */
 class InfoDetailActivity : AppCompatActivity() {
-
-    private val imgBack by lazy { findViewById<ImageView>(R.id.info_detail_img_back) }
-    private val txtEmpty by lazy { findViewById<TextView>(R.id.info_detail_txt_empty) }
-    private val txtAddress by lazy { findViewById<TextView>(R.id.info_detail_txt_address) }
-    private val txtDeviceModel by lazy { findViewById<TextView>(R.id.info_detail_txt_device_model) }
-
-    private val rvList by lazy { findViewById<RecyclerView>(R.id.info_detail_rv_apps) }
 
     private lateinit var info: Info
 
@@ -58,23 +44,23 @@ class InfoDetailActivity : AppCompatActivity() {
             bindList()
         }
 
-        imgBack.setOnClickListener { onBackPressed() }
+        info_detail_img_back.setOnClickListener { onBackPressed() }
     }
 
     private fun bindInfo() {
-        info.address?.let { txtAddress.text = it }
-        info.deviceModel?.let { txtDeviceModel.text = it }
+        info.address?.let { info_detail_txt_address.text = it }
+        info.deviceModel?.let { info_detail_txt_device_model.text = it }
     }
 
     private fun bindList() {
         if (info.istInstalledApps.isNotEmpty()) {
-            rvList.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-            rvList.setHasFixedSize(true)
-            rvList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-            rvList.adapter = InfoAppAdapter(this, info.istInstalledApps)
+            info_detail_rv_apps.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+            info_detail_rv_apps.setHasFixedSize(true)
+            info_detail_rv_apps.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+            info_detail_rv_apps.adapter = InfoAppAdapter(this, info.istInstalledApps)
         } else {
-            rvList.isVisible(false)
-            txtEmpty.isVisible(true)
+            info_detail_rv_apps.isVisible(false)
+            info_detail_txt_empty.isVisible(true)
         }
     }
 }
