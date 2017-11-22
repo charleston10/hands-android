@@ -4,6 +4,9 @@ O projeto tem como objetivo listar todos aparelhos cadastrados no sistema e quai
 
 <table>
   <td>
+       <img width="200" src="https://github.com/charleston10/hands-android/blob/master/screenshots/demo.gif">
+  </td>
+  <td>
        <img width="200" src="https://github.com/charleston10/hands-android/blob/master/screenshots/screen1.png">
   </td>
    <td>
