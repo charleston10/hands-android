@@ -40,7 +40,7 @@ class ApiModule {
     @Singleton
     fun provideRetrofit(gsonFactory: Gson, httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-                .baseUrl("http://10.10.100.152:3000/v1/")
+                .baseUrl("http://charleston.us-2.evennode.com/v1/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gsonFactory))
                 .client(httpClient)

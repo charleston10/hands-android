@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit
  */
 class InfoActivity : AppCompatActivity(), InfoView, InfoAdapter.ItemClickListener, PopupMenu.OnMenuItemClickListener {
 
-
     private val toolbar by lazy { findViewById<AppBarLayout>(R.id.toolbar_layout) }
     private val imgSort by lazy { findViewById<ImageView>(R.id.main_img_sort) }
     private val loading by lazy { findViewById<ProgressBar>(R.id.main_pb_loading) }
@@ -66,9 +65,7 @@ class InfoActivity : AppCompatActivity(), InfoView, InfoAdapter.ItemClickListene
         return false
     }
 
-    override fun onClick(item: Info) {
-        //DO NOTHING
-    }
+    override fun onClick(item: Info) = startActivity(InfoDetailActivity.getStartIntent(this, item))
 
     override fun showList(list: ArrayList<Info>) {
         runOnUiThread {

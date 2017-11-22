@@ -14,9 +14,6 @@ fun Toolbar.create(activity: AppCompatActivity, title: String, showBack: Boolean
 
     this.title = title
 
-    setBackgroundColor(context.color(R.color.white))
-    setTitleTextColor(context.color(R.color.colorSecondaryText))
-
     activity.setSupportActionBar(this)
     activity.supportActionBar?.setDisplayHomeAsUpEnabled(showBack)
     activity.supportActionBar?.setDisplayShowHomeEnabled(showBack)

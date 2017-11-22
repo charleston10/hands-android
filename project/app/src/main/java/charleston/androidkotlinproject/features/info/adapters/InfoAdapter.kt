@@ -34,7 +34,7 @@ class InfoAdapter(
             tvAddress.text = item.address
             tvAppsTitle.isVisible(item.istInstalledApps.isNotEmpty())
             tvApps.text = item.apps()
-            image.setImageDrawable(item.os.generateImage())
+            image.setImageDrawable(item.osVersion.generateImage())
 
         }
 

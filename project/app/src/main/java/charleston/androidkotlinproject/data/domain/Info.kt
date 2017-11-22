@@ -1,6 +1,7 @@
 package charleston.androidkotlinproject.data.domain
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 
 /**
@@ -34,7 +35,7 @@ data class Info(
         var city: String,
         var state: String,
         var country: String
-) {
+) : Serializable {
     fun apps(): String {
         val stringBuilder = StringBuilder()
 

@@ -20,17 +20,16 @@ fun View.show() {
 fun String.generateImage(): Drawable {
     val generator = ColorGenerator.MATERIAL
     val randomColor = generator.randomColor
-    val firstChar = this.first().toString()
 
     return TextDrawable.builder()
             .beginConfig()
-            .textColor(Color.BLACK)
+            .textColor(Color.WHITE)
             .useFont(Typeface.DEFAULT)
-            .fontSize(30) /* size in px */
+            .fontSize(50) /* size in px */
             .bold()
             .toUpperCase()
             .endConfig()
-            .buildRect(firstChar, randomColor)
+            .buildRoundRect(this, randomColor, 15)
 }
 
 fun View.isVisible(boolean: Boolean) {
